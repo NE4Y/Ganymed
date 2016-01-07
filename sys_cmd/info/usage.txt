@@ -1,0 +1,1 @@
+To get the usage of a command just type 'info [command]'

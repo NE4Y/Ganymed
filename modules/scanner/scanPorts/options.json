@@ -1,0 +1,1 @@
+[{"name":"TARGET_HOST","description":"Specify target host","required":true,"value":"metthub.de"},{"name":"START_PORT","description":"Specify start port","default":0,"required":true,"value":"80"},{"name":"END_PORT","description":"Specify end port","default":30,"required":true,"value":"445","value":"81"}]
