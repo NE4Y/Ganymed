@@ -6,7 +6,7 @@
 
 require 'socket'
 require 'ipaddress'
-require 'timeout'
+
 
 class PortScanner
 	

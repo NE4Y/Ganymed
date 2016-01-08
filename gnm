@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -n  "${1}" ] && [ ${1} = "update" ]; then
+	cd /usr/local/Ganymed && git pull origin master	
+elif [ -n "${1}" ] && [ ${1} != "update" ]; then
+	echo "Unknown option ${1}"
+else
+	cd /usr/local/Ganymed && ruby ganymed.rb 
+fi
