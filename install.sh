@@ -1,9 +1,13 @@
 #!/bin/bash
 
+INSTALL_DIR = /usr/local
 echo "Install needed ruby modules"
 
 gem install colorize json ipaddress 
 
+echo "Test if installation dir is writeable"
+
+if [ -w ${INSTALL_DIR} ]; echo "${INSTALL_DIR} not writeable"; exit 1
 echo "Move startscript"
 
 cp gnm /usr/local/bin/gnm && chmod a+x /usr/local/bin/gnm
