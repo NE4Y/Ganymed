@@ -12,12 +12,11 @@ echo "Copy files"
 
 rm -rf /usr/local/Ganymed
 rsync -az --exclude .git ../Ganymed/ /usr/local/Ganymed
-#cp -R ../Ganymed /usr/local/ 2> /dev/null
 
 
 echo "Init git repo for update"
 
 cd /usr/local/Ganymed && git init && git remote add origin https://github.com/NE4Y/Ganymed
 
-
+echo "Installation complete"
 
