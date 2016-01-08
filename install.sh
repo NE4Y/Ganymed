@@ -21,11 +21,12 @@ fi
  
 echo "Link startscript"
 
+rm ${INSTALL_DIR}/bin/gnm > /dev/null
 ln -s ${INSTALL_DIR}/Ganymed/gnm ${INSTALL_DIR}/bin/gnm 
 
 echo "Copy files"
 
-rm -rf ${INSTALL_DIR}/Ganymed
+rm -rf ${INSTALL_DIR}/Ganymed > /dev/null
 rsync -az --exclude .git ../Ganymed/ ${INSTALL_DIR}/Ganymed
 
 
