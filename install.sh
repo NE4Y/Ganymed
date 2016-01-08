@@ -19,9 +19,9 @@ if ! [ -w ${INSTALL_DIR} ]; then
   echo "${INSTALL_DIR} not writeable" && exit 1
 fi
  
-echo "Move startscript"
+echo "Link startscript"
 
-cp gnm ${INSTALL_DIR}/bin/gnm && chmod a+x ${INSTALL_DIR}/bin/gnm
+ln -s ${INSTALL_DIR}/Ganymed/gnm ${INSTALL_DIR}/bin/gnm 
 
 echo "Copy files"
 
