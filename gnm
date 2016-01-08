@@ -2,7 +2,7 @@
 
 # Starter script
 if [ -n  "${1}" ] && [ ${1} = "update" ]; then
-	cd /usr/local/Ganymed && git pull origin master	
+	cd /usr/local/Ganymed && git reset --hard origin/master && git pull origin master	
 elif [ -n "${1}" ] && [ ${1} != "update" ]; then
 	echo "Unknown option ${1}"
 else
