@@ -7,6 +7,7 @@ Small scanning tool for pentesters - development state
 - Text completion 
 - Simple module development
 - Metasploit compatible (not yet finished)
+- Installation script
 
 ![alt text][logo]
 
