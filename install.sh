@@ -6,6 +6,7 @@ INSTALL_DIR=/usr/local
 NC='\033[0m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
+YELLOW='\033[1;33m'
 
 # check for need ruby modules
 echo "Checking ruby modules"
@@ -13,7 +14,7 @@ for MOD in colorize json ipaddress timeout
 do
 	#T=false
 	if  ! $(gem list $MOD -i);  then
-		echo "Install ruby module $MOD"
+		echo -e "${YELLOW}[info] ${NC} Install ruby module $MOD"
 		gem install $MOD
 	else
 		echo -e "${GREEN}[ok] ${NC} ruby module $MOD exists"
