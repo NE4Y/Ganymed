@@ -8,7 +8,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 
 # check for need ruby modules
-for MOD in colorize json ipaddress
+for MOD in colorize json ipaddress timeout
 do
 	#T=false
 	if  ! $(gem list $MOD -i);  then
