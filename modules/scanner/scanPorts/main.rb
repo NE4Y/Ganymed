@@ -6,12 +6,23 @@
 
 require 'socket'
 require 'ipaddress'
+require 'timeout'
 
 
 class PortScanner
 	
+	@@threads = Array.new
 
 	public
+
+	def self.getThreads() 
+		return @@threads
+	end
+
+	def self.setThreads(threads)
+		@@threads = threads
+	end
+
 	def open_port(host, startport, endport, max)
 		
 
@@ -19,11 +30,13 @@ class PortScanner
 			sock = Socket.new(:INET, :STREAM)
 			raw = Socket.sockaddr_in(startport, host)
 			begin
-				if sock.connect(raw)
-					puts "[open]".green + " Port #{startport}" 
-				else
-					#puts "[closed]".red + " Port #{startport}"
-				end
+				Timeout.timeout(0.1) {
+					if sock.connect(raw)
+						puts "[open]".green + " Port #{startport}" 
+					else
+						#puts "[closed]".red + " Port #{startport}"
+					end
+				}
 				
 			rescue Exception => e
 				#puts "[closed]".red + " Port #{startport}"		
@@ -33,6 +46,8 @@ class PortScanner
 
 			startport += 1
 		end
+
+		
 		
 	end
 end
@@ -53,13 +68,15 @@ end
 def startScan(host, start_port, end_port)
 	puts "[info]".yellow + " Start port scan for #{host} from #{start_port} til #{end_port} - Only open ports are listed"
 	ps = PortScanner.new()
-	range = 3
+	range = 5
 	until start_port > end_port do
    		t = Thread.new{ps.open_port(host, start_port, start_port + range, end_port)}
-   		t.abort_on_exception = true
    		t.join
+   		#puts "start thread"
+   		
    		start_port += range
 	end
+
 end
 
 
