@@ -22,11 +22,15 @@ Small scanning tool for pentesters - development state
 ```
 ./install.sh
 ```
-```
-```
 
 #### Usage
 
 ```
-ruby ganymed.rb
+gnm
+```
+
+### Update
+
+```
+gnm update
 ```
