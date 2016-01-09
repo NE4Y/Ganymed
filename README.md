@@ -8,6 +8,7 @@ Small scanning tool for pentesters - development state
 - Simple module development
 - Metasploit compatible (not yet finished)
 - Installation script
+- Simple update
 
 ![alt text][logo]
 
