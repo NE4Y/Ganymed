@@ -8,12 +8,15 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 
 # check for need ruby modules
+echo "Checking ruby modules"
 for MOD in colorize json ipaddress timeout
 do
 	#T=false
 	if  ! $(gem list $MOD -i);  then
 		echo "Install ruby module $MOD"
 		gem install $MOD
+	else
+		echo -e "${GREEN}[ok] ${NC} ruby module $MOD exists"
 	fi
 done
 #gem install colorize json ipaddress 
