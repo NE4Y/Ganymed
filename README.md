@@ -20,10 +20,9 @@ Small scanning tool for pentesters - development state
 
 #### Installation
 ```
-apt-get install ruby
+./install.sh
 ```
 ```
-gem install colorize
 ```
 
 #### Usage
